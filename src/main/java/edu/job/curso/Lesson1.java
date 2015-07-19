@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
 
 /**
  * @author Speakjava (simon.ritter@oracle.com)
@@ -74,13 +75,23 @@ public class Lesson1 {
     /**
      * Exercise 3
      *
-     * Replace every word in the list with its upper case equivalent. HINT: Use
-     * one of the new methods from JDK 8
+     * Replace every word in the list with its upper case equivalent. 
+     * HINT: Use one of the new methods from JDK 8
      */
     private void exercise3() {
         List<String> list = new ArrayList<>(Arrays.asList(
                 "alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
 
+        list.replaceAll(new UnaryOperator<String>() {
+
+            @Override
+            public String apply(String t) {
+                return t.toUpperCase();
+            }
+        });
+        
+        
+        System.out.println("list = " + list);
         /* YOUR CODE HERE */
     }
 
