@@ -81,18 +81,8 @@ public class Lesson1 {
     private void exercise3() {
         List<String> list = new ArrayList<>(Arrays.asList(
                 "alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
-
-        list.replaceAll(new UnaryOperator<String>() {
-
-            @Override
-            public String apply(String t) {
-                return t.toUpperCase();
-            }
-        });
-        
-        
+        list.replaceAll(string -> string.toUpperCase());
         System.out.println("list = " + list);
-        /* YOUR CODE HERE */
     }
 
     /**
