@@ -66,14 +66,7 @@ public class Lesson1 {
     private void exercise2() {
         List<String> list = new ArrayList<>(Arrays.asList(
                 "alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
-        list.removeIf(new Predicate<String>() {
-
-            @Override
-            public boolean test(String t) {
-                 return t.length()% 2!=0;
-            }
-        });
-        
+        list.removeIf( string -> string.length()% 2!=0);
         System.out.println("list = " + list);
     }
  
