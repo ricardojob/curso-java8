@@ -38,10 +38,12 @@ public class Lesson1 {
     }
 
     /**
+     *
      * All exercises should be completed using Lambda expressions and the new
      * methods added to JDK 8 where appropriate. There is no need to use an
      * explicit loop in any of the code. Use method references rather than full
      * lambda expressions wherever possible.
+     *
      */
     /**
      * Exercise 1
@@ -61,22 +63,21 @@ public class Lesson1 {
     /**
      * Exercise 2
      *
-     * Remove the words that have odd lengths from the list. 
-     * HINT: Use one of the new methods from JDK 8
+     * Remove the words that have odd lengths from the list. HINT: Use one of
+     * the new methods from JDK 8
      */
     private void exercise2() {
         List<String> list = new ArrayList<>(Arrays.asList(
                 "alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
-        list.removeIf( string -> string.length()% 2!=0);
+        list.removeIf(string -> string.length() % 2 != 0);
         System.out.println("list = " + list);
     }
- 
 
     /**
      * Exercise 3
      *
-     * Replace every word in the list with its upper case equivalent. 
-     * HINT: Use one of the new methods from JDK 8
+     * Replace every word in the list with its upper case equivalent. HINT: Use
+     * one of the new methods from JDK 8
      */
     private void exercise3() {
         List<String> list = new ArrayList<>(Arrays.asList(
@@ -110,15 +111,10 @@ public class Lesson1 {
      */
     private void exercise5() {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
-        /* YOUR CODE HERE */
+        Runnable executor = () -> list.forEach(System.out::println);
+        executor.run();
     }
 
-    /**
-     * Main entry point for application
-     *
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Lesson1 lesson = new Lesson1();
         lesson.runExercises();
