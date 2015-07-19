@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 /**
  * @author Speakjava (simon.ritter@oracle.com)
@@ -59,15 +60,23 @@ public class Lesson1 {
     /**
      * Exercise 2
      *
-     * Remove the words that have odd lengths from the list. HINT: Use one of
-     * the new methods from JDK 8
+     * Remove the words that have odd lengths from the list. 
+     * HINT: Use one of the new methods from JDK 8
      */
     private void exercise2() {
         List<String> list = new ArrayList<>(Arrays.asList(
                 "alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
+        list.removeIf(new Predicate<String>() {
 
-        /* YOUR CODE HERE */
+            @Override
+            public boolean test(String t) {
+                 return t.length()% 2!=0;
+            }
+        });
+        
+        System.out.println("list = " + list);
     }
+ 
 
     /**
      * Exercise 3
