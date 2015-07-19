@@ -10,9 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
+import java.util.function.BiConsumer;
 
 /**
  * @author Speakjava (simon.ritter@oracle.com)
@@ -99,8 +97,12 @@ public class Lesson1 {
         map.put("c", 3);
         map.put("b", 2);
         map.put("a", 1);
-
-        /* YOUR CODE HERE */
+        StringBuilder builder = new StringBuilder();
+        map.forEach((key, value) -> {
+            String newString = key.concat(value.toString());
+            builder.append(newString);
+        });
+        System.out.println("builder = " + builder.toString());
     }
 
     /**
